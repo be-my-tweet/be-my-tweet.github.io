@@ -63,6 +63,8 @@
 
 .tweet > .more span {
     flex-shrink: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .tweet > .more :is(.avatar, .icon) {
@@ -77,7 +79,7 @@
     height: var(--size);
 }
 
-.tweet .thread:is(.up, .down) {
+.tweet .thread:is(.up, .mid, .down) {
     --bot: calc(var(--more-bot) + var(--more-size) + var(--space));
     --top: calc(var(--padding-top) + var(--avatar-size) + var(--space));
     --left: calc(var(--padding-left) + (var(--avatar-size) - var(--width)) / 2);
@@ -87,7 +89,7 @@
     background-color: var(--color);
 }
 
-.tweet .thread.up {
+.tweet .thread:is(.up, .mid) {
     top: 0;
     border-radius: 100vw;
     border-top-left-radius: 0;
@@ -109,7 +111,7 @@
     height: calc(100% - var(--padding-top) - var(--avatar-size) - var(--space));
 }
 
-.tweet > .more ~ .thread.up {
+.tweet > .more ~ .thread.mid {
     top: unset;
     bottom: var(--bot);
     height: var(--width);
