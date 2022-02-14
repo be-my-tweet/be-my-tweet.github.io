@@ -18,7 +18,7 @@ const datetime = s => {
 
     if (!passed) (passed = 'Now', times.push(''));
     let current = now.getFullYear() === then.getFullYear();
-    let [hour, minute] = [f({ hour: 'numeric', hour12 }, hour12 ? 1 : 2), f({ minute: '2-digit' }, 2)];
+    let [hour, minute] = [f({ hour: 'numeric', hour12 }, 2).trim(), f({ minute: '2-digit' }, 2)];
     let [day, month, year] = [f({ day: '2-digit' }, 2), f({ month: 'short' }), f({ year: '2-digit' }, 2)];
     let dates = [`${day}/${f({ month: '2-digit' }, 2)}/${f({ year: 'numeric' })}`, `${day} ${month} ${year}`];
     let date = document.documentElement.classList.contains('ios') ? dates[0] : dates[1];
