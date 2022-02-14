@@ -35,6 +35,7 @@ html.ios .tweet.reply {
     --padding-left: 16px;
     --padding-right: 16px;
     --more-thread-bot: 8px;
+    --more-replies-top: 8px;
     --avatar-right: 8px;
 }
 
