@@ -1,0 +1,324 @@
+@font-face {
+    font-family: TwitterChirp;
+    src: url(/assets/fonts/chirp-regular.woff);
+}
+
+@font-face {
+    font-weight: bold;
+    font-family: TwitterChirp;
+    src: url(/assets/fonts/chirp-bold.woff);
+}
+
+html {
+    --font-size: 15px;
+    --line-height: 20px;
+    --disabled: opacity(0.5);
+    --focus: opacity(0.5);
+}
+
+.send {
+    --focus: opacity(0.75);
+}
+
+html.android {
+    --float: 0.5;
+}
+
+html.ios {
+    --float: 0.9;
+}
+
+html.dark {
+    --fade: 0.9;
+    --background: rgb(0, 0, 0);
+    --faded: rgba(0, 0, 0, var(--fade));
+    --foreground: rgb(217, 217, 217);
+    --surface: rgb(18, 19, 21);
+    --border: rgb(47, 51, 54);
+    --muted: rgb(124, 131, 139);
+    --options: rgb(80, 84, 88);
+    --white: rgb(255, 255, 255);
+}
+
+html.dim {
+    --fade: 0.95;
+    --background: rgb(21, 32, 43);
+    --faded: rgba(21, 32, 43, var(--fade));
+    --foreground: rgb(255, 255, 255);
+    --surface: rgb(28, 39, 50);
+    --muted: rgb(136, 153, 166);
+    --border: rgb(56, 68, 77);
+    --options: rgb(108, 124, 140);
+    --white: rgb(255, 255, 255);
+}
+
+html.light {
+    --fade: 0.95;
+    --background: rgb(255, 255, 255);
+    --faded: rgba(255, 255, 255, var(--fade));
+    --foreground: rgb(15, 20, 25);
+    --surface: rgb(247, 247, 247);
+    --muted: rgb(83, 100, 113);
+    --border: rgb(239, 243, 244);
+    --options: rgb(184, 202, 210);
+    --white: var(--foreground);
+}
+
+html.blue { --accent: rgb(29, 155, 240); }
+html.yellow { --accent: rgb(255, 212, 0); }
+html.pink { --accent: rgb(249, 24, 128); }
+html.purple { --accent: rgb(120, 86, 255); }
+html.orange { --accent: rgb(255, 122, 0); }
+html.green { --accent: rgb(0, 186, 124); }
+
+
+
+/**/
+
+
+
+#screen {
+    --width: 480px;
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > :is(.header, .body) {
+    --height: 58px;
+    --padding: 12px;
+}
+
+html.ios #screen > .screen > :is(.header, .body) {
+    --height: 50px;
+    --padding: 16px;
+}
+
+#screen > .screen > .header .avatar {
+    --size: 25px;
+}
+
+#screen > .screen > .header .icon {
+    --size: 25px;
+    --width: 25px;
+    --color: var(--white);
+}
+
+#screen > .screen > .header .twitter {
+    --color: var(--accent);
+}
+
+html.ios #screen > .screen > .header .icon:not(.twitter) {
+    --size: 22px;
+}
+
+#screen > .screen > .header span {
+    --color: var(--foreground);
+}
+
+html.ios #screen > .screen > .header span {
+    --font-size: 1rem;
+    --weight: bold;
+}
+
+html.android #screen > .screen > .header span {
+    --font-size: 20px;
+    --margin-left: 22px;
+}
+
+#screen > .screen > .header .cancel {
+    --font-size: 1rem;
+    --color: var(--foreground);
+}
+
+#screen > .screen > .header .send {
+    --font-size: 1rem;
+    --padding-vertical: 6px;
+    --padding-horizontal: 16px;
+    --background: var(--accent);
+    --foreground: white;
+    --weight: bold;
+}
+
+html.ios #screen > .screen > .header .send {
+    --font-size: 13px;
+    --padding-vertical: 4px;
+    --padding-horizontal: 14px;
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > .footer {
+    --height: 58px;
+}
+
+html.ios #screen > .screen > .footer {
+    --height: 50px;
+}
+
+#screen > .screen > .footer .icon {
+    --size: 25px;
+    --color: var(--white);
+}
+
+html.ios #screen > .screen > .footer .icon {
+    --size: 22px;
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > .body > .float {
+    --size: 56px;
+    --margin: 16px;
+    --background: var(--accent);
+}
+
+html.ios #screen > .screen > .body > .float {
+    --size: 50px;
+    --margin: 10px;
+}
+
+#screen > .screen > .body > .float .active {
+    --background: white;
+}
+
+#screen > .screen > .body > .float .icon {
+    --size: 25px;
+    --color: white;
+}
+
+
+
+/**/
+
+
+
+#screen > .screen.compose > .body > .content > .avatar {
+    --size: 36px;
+    --margin-top: 12px;
+    --margin-left: 12px;
+    --margin-right: 10px;
+}
+
+#screen > .screen.compose > .body > .content > .textarea {
+    --font-size: 18px;
+    --line-height: 26px;
+    --margin-top: 12px;
+    --margin-right: 12px;
+}
+
+html.ios #screen > .screen.compose > .body > .content > .avatar {
+    --size: 32px;
+    --margin-top: 4px;
+    --margin-right: 8px;
+    --margin-left: 16px;
+}
+
+html.ios #screen > .screen.compose > .body > .content > .textarea {
+    --margin-top: 4px;
+}
+
+#screen > .screen.compose > .body > .content > .textarea .overflow {
+    --color: rgb(224, 36, 94);
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > .body > .content > .end {
+    --height: 64px;
+    --padding-top: 12px;
+    --size: var(--line-height);
+}
+
+
+
+/**/
+
+
+
+html.android #screen > .screen {
+    --timing: ease;
+    --transition: 0.25s;
+    --scale: scale(0.9);
+}
+
+html.ios #screen > .screen {
+    --timing: linear;
+    --transition: 0.2s;
+}
+
+
+
+/**/
+
+
+
+.spinner {
+    --size: 42px;
+    --color: var(--accent);
+    --stroke-bezier: 0.5;
+    --stroke-time: 1.32s;
+    --spin-time: 2.2s;
+
+    --min: 4;
+    --max: 55;
+    --gap: 65;
+    --start: 2;
+    --half: -7;
+    --end: -67;
+}
+
+
+
+/**/
+
+
+
+html.android .twitter { --mask-image: url(/assets/icons/android/twitter.svg); }
+html.android .latest { --mask-image: url(/assets/icons/android/latest.svg); }
+html.android .back { --mask-image: url(/assets/icons/android/back.svg); }
+html.android .close { --mask-image: url(/assets/icons/android/close.svg); }
+html.android .home { --mask-image: url(/assets/icons/android/home.svg); }
+html.android .search { --mask-image: url(/assets/icons/android/search.svg); }
+html.android .spaces { --mask-image: url(/assets/icons/android/spaces.svg); }
+html.android .notifications { --mask-image: url(/assets/icons/android/notifications.svg); }
+html.android .messages { --mask-image: url(/assets/icons/android/messages.svg); }
+html.android .options { --mask-image: url(/assets/icons/android/options.svg); }
+html.android .reply { --mask-image: url(/assets/icons/android/reply.svg); }
+html.android .retweet { --mask-image: url(/assets/icons/android/retweet.svg); }
+html.android .like { --mask-image: url(/assets/icons/android/like.svg); }
+html.android .share { --mask-image: url(/assets/icons/android/share.svg); }
+html.android .more { --mask-image: url(/assets/icons/android/more.svg); }
+html.android .compose { --mask-image: url(/assets/icons/android/compose.svg); }
+
+html.ios .twitter { --mask-image: url(/assets/icons/ios/twitter.svg); }
+html.ios .latest { --mask-image: url(/assets/icons/ios/latest.svg); }
+html.ios .back { --mask-image: url(/assets/icons/ios/back.svg); }
+html.ios .close { --mask-image: url(/assets/icons/ios/close.svg); }
+html.ios .home { --mask-image: url(/assets/icons/ios/home.svg); }
+html.ios .search { --mask-image: url(/assets/icons/ios/search.svg); }
+html.ios .spaces { --mask-image: url(/assets/icons/ios/spaces.svg); }
+html.ios .notifications { --mask-image: url(/assets/icons/ios/notifications.svg); }
+html.ios .messages { --mask-image: url(/assets/icons/ios/messages.svg); }
+html.ios .options { --mask-image: url(/assets/icons/ios/options.svg); }
+html.ios .reply { --mask-image: url(/assets/icons/ios/reply.svg); }
+html.ios .retweet { --mask-image: url(/assets/icons/ios/retweet.svg); }
+html.ios .like { --mask-image: url(/assets/icons/ios/like.svg); }
+html.ios .share { --mask-image: url(/assets/icons/ios/share.svg); }
+html.ios .more { --mask-image: url(/assets/icons/ios/more.svg); }
+html.ios .compose { --mask-image: url(/assets/icons/ios/compose.svg); }

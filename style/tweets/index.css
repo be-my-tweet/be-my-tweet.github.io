@@ -1,0 +1,238 @@
+.tweet .thread {
+    --width: 2px;
+    --space: 2px;
+    --color: var(--border);
+}
+
+.tweet .more span {
+    --color: var(--accent);
+}
+
+.tweet .more .icon {
+    --color: var(--border);
+}
+
+
+
+/**/
+
+
+
+.tweet.reply {
+    --padding-top: 10px;
+    --padding-left: 12px;
+    --padding-right: 12px;
+    --avatar-right: 10px;
+    --avatar-size: 54px;
+    --more-thread-bot: 4px;
+    --more-thread-size: 32px;
+    --more-replies-size: 16px;
+    --more-replies-bot: 10px;
+    --more-replies-top: 4px;
+}
+
+html.ios .tweet.reply {
+    --padding-left: 16px;
+    --padding-right: 16px;
+    --more-thread-bot: 8px;
+    --avatar-right: 8px;
+}
+
+.tweet.reply .top span {
+    --size: 1rem;
+    --color: var(--muted);
+}
+
+.tweet.reply .top .display {
+    --margin: 4px;
+    --color: var(--foreground);
+    --weight: bold;
+}
+
+.tweet.reply .top .sep {
+    --size: 1rem;
+    --height: 0.9;
+    --margin: 4px;
+}
+
+.tweet.reply .top .passed {
+    --margin: 4px;
+}
+
+.tweet.reply .top .options {
+    --size: 16px;
+    --color: var(--options);
+}
+
+.tweet.reply .top {
+    --margin: 2px;
+}
+
+.tweet.reply .replying span {
+    --size: 1rem;
+    --color: var(--muted);
+}
+
+.tweet.reply .replying .tag {
+    --color: var(--accent);
+}
+
+.tweet.reply .replying {
+    --margin: 6px;
+}
+
+.tweet.reply .text {
+    --size: 1rem;
+    --margin-bot: 0px;
+    --margin-top: 0px;
+}
+
+.tweet.reply .bot .icon {
+    --size: 18px;
+    --margin: 8px;
+    --color: var(--muted);
+}
+
+html.ios .tweet.reply .bot .icon {
+    --size: 16px;
+}
+
+.tweet.reply .bot .value {
+    --font-size: 13px;
+    --line-height: 16px;
+    --color: var(--muted);
+}
+
+.tweet.reply .bot {
+    --height: 36px;
+}
+
+html.ios .tweet.reply .bot {
+    --height: 32px;
+}
+
+
+
+/**/
+
+
+
+.tweet.thread {
+    --padding-top: 10px;
+    --padding-left: 12px;
+    --padding-right: 12px;
+    --avatar-right: 10px;
+    --avatar-size: 54px;
+}
+
+html.ios .tweet.thread {
+    --padding-left: 16px;
+    --padding-right: 16px;
+    --avatar-right: 8px;
+}
+
+.tweet.thread .top span {
+    --size: 1rem;
+    --color: var(--muted);
+}
+
+.tweet.thread .top .display {
+    --margin: 0px;
+    --color: var(--foreground);
+    --weight: bold;
+}
+
+.tweet.thread .top .options {
+    --size: 16px;
+    --margin: 8px;
+    --color: var(--options);
+}
+
+.tweet.thread .top {
+    --margin: 8px;
+}
+
+.tweet.thread .replying span {
+    --size: 1rem;
+    --color: var(--muted);
+}
+
+.tweet.thread .replying .tag {
+    --color: var(--accent);
+}
+
+.tweet.thread .replying {
+    --margin: 4px;
+}
+
+html.ios .tweet.thread .replying {
+    --margin: 0px;
+}
+
+.tweet.thread .text {
+    --font-size: 22px;
+    --line-height: 28px;
+    --margin-top: 0px;
+    --margin-bot: 4px;
+}
+
+html.ios .tweet.thread .text {
+    --margin-top: 8px;
+    --margin-bot: 16px;
+    --font-size: 20px;
+    --line-height: 26px;
+}
+
+.tweet.thread .info span {
+    --color: var(--muted);
+}
+
+.tweet.thread .info .sep {
+    --size: 1rem;
+    --height: 0.9;
+    --margin: 4px;
+}
+
+.tweet.thread .info {
+    --margin: 8px;
+}
+
+html.ios .tweet.thread .info {
+    --margin: 12px;
+}
+
+.tweet.thread .stat {
+    --height: 44px;
+}
+
+html.ios .tweet.thread .stat {
+    --height: 40px;
+}
+
+.tweet.thread .stat span {
+    --size: 1rem;
+    --margin: 12px;
+    --color: var(--muted);
+}
+
+.tweet.thread .stat .value {
+    --color: var(--foreground);
+    --weight: bold;
+}
+
+.tweet.thread .bot .icon {
+    --size: 22px;
+    --color: var(--muted);
+}
+
+html.ios .tweet.thread .bot .icon {
+    --size: 20px;
+}
+
+.tweet.thread .bot {
+    --height: 48px;
+}
+
+html.ios .tweet.thread .bot {
+    --height: 44px;
+}

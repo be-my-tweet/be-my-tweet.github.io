@@ -1,0 +1,462 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+}
+
+* {
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: var(--line-height);
+    font-size: var(--font-size);
+    color: var(--foreground);
+
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 0;
+    margin: 0;
+
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    user-select: none;
+    outline: none;
+    border: none;
+}
+
+:not(html, body) {
+    overflow: hidden;
+}
+
+span {
+    --color: var(--foreground);
+    --size: var(--font-size);
+    --weight: initial;
+    font-weight: var(--weight);
+    font-size: var(--size);
+    color: var(--color);
+}
+
+@media (hover: hover) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        scrollbar-width: none;
+    }
+}
+
+html.static, html.static body {
+    overscroll-behavior-y: contain;
+}
+
+html.android .ios, html.ios .android {
+    display: none !important;
+}
+
+:is(#screens, #tweets), :is(#screens, #tweets) ~ * {
+    display: none !important;
+}
+
+
+
+/**/
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+#screen {
+    height: 100%;
+    width: min(100%, var(--width));
+    box-sizing: content-box;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: var(--border);
+    position: relative;
+}
+
+#screen > .screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#screen > .screen > .body {
+    height: 0;
+    flex-grow: 1;
+    position: relative;
+}
+
+#screen > .screen > .body > .content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#screen > .screen > .body > .load {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#screen > .screen > .body > .load + .content {
+    display: none !important;
+}
+
+html.ios #screen > .screen > .body {
+    margin-top: calc(-1 * var(--height));
+}
+
+html.ios #screen > .screen > .body > .content > .offset {
+    width: 100%;
+    height: var(--height);
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > .header {
+    width: 100%;
+    height: var(--height);
+    background-color: var(--background);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    z-index: 5;
+}
+
+html.ios #screen > .screen > .header {
+    background-color: var(--faded);
+}
+
+:is(html.android #screen > .screen, #screen > .screen.compose) > .header {
+    border-bottom: 1px solid var(--border);
+}
+
+:is(html.android #screen > .screen, #screen > .screen.compose) > .header.noborder {
+    border-bottom-color: transparent;
+}
+
+html.android #screen > .screen.thread > .header {
+    justify-content: flex-start;
+}
+
+#screen > .screen > .header .avatar {
+    --width: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#screen > .screen > .header :is(.icon, .avatar) {
+    height: 100%;
+    width: calc(var(--width) + var(--padding) * 2);
+    flex-shrink: 1;
+}
+
+html.android #screen > .screen > .header span {
+    margin-left: var(--margin-left);
+}
+
+#screen > .screen > .header .cancel {
+    padding: 0 var(--padding);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#screen > .screen > .header .send {
+    border-radius: 100vh;
+    background-color: var(--background);
+    padding: var(--padding-vertical) var(--padding-horizontal);
+    margin-right: var(--padding);
+    font-weight: var(--weight);
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > .footer {
+    width: 100%;
+    height: var(--height);
+    border-top: 1px solid var(--border);
+    display: flex;
+}
+
+#screen > .screen > .footer .icon {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 1;
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > .body > .float {
+    width: var(--size);
+    height: var(--size);
+    margin: var(--margin);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    border-radius: 100vmax;
+    background-color: var(--background);
+}
+
+#screen > .screen > .body > .float .active {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--background);
+    opacity: 0;
+}
+
+#screen > .screen > .body > .float .icon {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/**/
+
+
+
+#screen > .screen.compose > .body {
+    overflow-y: auto;
+}
+
+#screen > .screen.compose > .body > .content {
+    overflow-y: initial !important;
+    height: auto !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#screen > .screen.compose > .body > .content > .avatar {
+    margin: var(--margin-top) var(--margin-right) var(--margin-top) var(--margin-left);
+}
+
+#screen > .screen.compose > .body > .content > .textarea {
+    width: 0%;
+    height: var(--line-height);
+    margin: var(--margin-top) var(--margin-right) var(--margin-top) 0;
+    position: relative;
+    align-self: center;
+    flex-grow: 1;
+    display: flex;
+}
+
+#screen > .screen.compose > .body > .content > .textarea textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    caret-color: var(--accent);
+    z-index: 1;
+}
+
+#screen > .screen.compose > .body > .content > .textarea :is(textarea, .input, .overflow) {
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+#screen > .screen.compose > .body > .content > .textarea :is(.input, .overflow) {
+    color: transparent;
+    display: inline;
+}
+
+#screen > .screen.compose > .body > .content > .textarea .input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#screen > .screen.compose > .body > .content > .textarea .overflow {
+    background-color: var(--color);
+}
+
+
+
+/**/
+
+
+
+#screen > .screen > .body > .content > .end {
+    width: 100%;
+    height: var(--height);
+    padding-top: var(--padding-top);
+    text-align: center;
+    display: block;
+    line-height: 0;
+    font-size: var(--size);
+    color: var(--border);
+    font-weight: bold;
+}
+
+
+
+/**/
+
+
+
+#screen > .screen {
+    transition-timing-function: var(--timing);
+    transition-duration: var(--transition);
+    transition-property: transform;
+    z-index: 10;
+}
+
+#screen > .screen.show {
+    z-index: 11;
+}
+
+#screen > .screen.right {
+    transform: translateX(100%);
+}
+
+#screen > .screen.bottom {
+    transform: translateY(100%);
+}
+
+html.android #screen > .screen:is(.top, .left) {
+    transform: var(--scale);
+}
+
+html.ios #screen > .screen.left {
+    transform: translateX(-10%);
+}
+
+html.ios #screen > .screen.top {
+    transform: translateY(0);
+}
+
+
+
+/**/
+
+
+
+.spinner {
+    fill: none;
+    width: var(--size);
+    height: var(--size);
+    stroke: var(--color);
+    --cubic: cubic-bezier(calc(1 - var(--stroke-bezier)), 0, var(--stroke-bezier), 1);
+    animation: stroke var(--stroke-time) var(--cubic) infinite, spin var(--spin-time) linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes stroke {
+    0% {
+        stroke-dashoffset: var(--start);
+        stroke-dasharray: var(--min), var(--gap);
+    }
+
+    50% {
+        stroke-dashoffset: var(--half);
+        stroke-dasharray: var(--max), var(--gap);
+    }
+
+    100% {
+        stroke-dashoffset: var(--end);
+        stroke-dasharray: var(--min), var(--gap);
+    }
+}
+
+
+
+/**/
+
+
+
+.send:disabled {
+    filter: var(--disabled);
+}
+
+:is(.button, :not(.button, .float) > .icon, .avatar, .cancel, .send):is(:active, :focus-visible) {
+    filter: var(--focus);
+}
+
+html.android #screen > .screen > .body > .float:is(:active, :focus-visible) .active {
+    opacity: var(--float);
+}
+
+html.ios #screen > .screen > .body > .float:is(:active, :focus-visible) {
+    transform: scale(var(--float));
+}
+
+.tweet > .body > .click:is(:active, :focus-visible) {
+    background-color: var(--surface);
+}
+
+@media (hover: hover) {
+    :is(.button, :not(.button, .float) > .icon, .avatar, .cancel):hover {
+        filter: var(--focus);
+    }
+
+    html.android #screen > .screen > .body > .float:hover .active {
+        opacity: var(--float);
+    }
+
+    html.ios #screen > .screen > .body > .float:hover {
+        transform: scale(var(--float));
+    }
+
+    .tweet > .body > .click:hover {
+        background-color: var(--surface);
+    }
+}
+
+img.avatar, .avatar img {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100vmax;
+}
+
+.icon.hide {
+    background-color: transparent;
+}
+
+.icon {
+    --mask-position: center;
+    --mask-repeat: no-repeat;
+    --mask-size: var(--size) var(--size);
+    background-color: var(--color);
+
+    mask-size: var(--mask-size);
+    mask-image: var(--mask-image);
+    mask-repeat: var(--mask-repeat);
+    mask-position: var(--mask-position);
+    -webkit-mask-size: var(--mask-size);
+    -webkit-mask-image: var(--mask-image);
+    -webkit-mask-repeat: var(--mask-repeat);
+    -webkit-mask-position: var(--mask-position);
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang=en class="android dark blue">
+    <head>
+        <meta charset=UTF-8>
+        <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <script src=jquery-3.6.0.min.js></script>
+        <link rel=icon href=assets/twitter.ico>
+        <title>Be My Tweet!</title>
+
+        <link rel=stylesheet href=style/tweets/index.css>
+        <link rel=stylesheet href=style/screens/index.css>
+        <link rel=stylesheet href=style/tweets/styling.css>
+        <link rel=stylesheet href=style/screens/styling.css>
+        <script type=module src=script/index.js defer></script>
+    </head>
+    <body>
+        <div id=screens>
+
+            <div id=home class="screen home">
+                <div class=header>
+                    <button class=avatar>
+                        <img></img>
+                    </button>
+                    <button class="icon twitter"></button>
+                    <button class="icon latest"></button>
+                </div>
+                <div class=body>
+                    <div class=load></div>
+                    <div class=content>
+                        <div class="ios offset"></div>
+                        <div class=tweets></div>
+                        <span class=end>.</span>
+                    </div>
+                    <button class=float>
+                        <div class=active></div>
+                        <div class="icon compose"></div>
+                    </button>
+                </div>
+                <div class=footer>
+                    <div class="icon home"></div>
+                    <div class="icon search"></div>
+                    <div class="icon spaces"></div>
+                    <div class="icon notifications"></div>
+                    <div class="icon messages"></div>
+                </div>
+            </div>
+
+            <div id=thread class="screen thread">
+                <div class=header>
+                    <button class="icon back"></button>
+                    <span>Thread</span>
+                    <button class="icon hide"></button>
+                </div>
+                <div class=body>
+                    <div class=load></div>
+                    <div class=content>
+                        <div class="ios offset"></div>
+                        <div class=tweets></div>
+                        <span class=end>.</span>
+                    </div>
+                </div>
+                <div class="footer ios">
+                    <div class="icon home"></div>
+                    <div class="icon search"></div>
+                    <div class="icon spaces"></div>
+                    <div class="icon notifications"></div>
+                    <div class="icon messages"></div>
+                </div>
+            </div>
+
+            <div id=compose class="screen compose static">
+                <div class=header>
+                    <button class="icon close android"></button>
+                    <button class="cancel ios">Cancel</button>
+                    <button class=send disabled>Tweet</button>
+                </div>
+                <div class=body>
+                    <div class=load></div>
+                    <div class=content>
+                        <div class="ios offset"></div>
+                        <img class=avatar></img>
+                        <div class=textarea>
+                            <textarea spellcheck=false placeholder="What’s happening?"></textarea>
+                            <span class=input> <span class=overflow></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <svg id=spinner class=spinner viewBox="0 0 24 24"><path stroke-width="2" d="M12 12m0 11a11 11 0 1 1 0 -22a11 11 0 1 1 0 22"/></svg>
+
+        </div>
+
+        <div id=tweets>
+
+            <div id=reply class="tweet reply">
+                <div class=body>
+                    <button class=click></button>
+                    <img class=avatar></img>
+                    <div class=content>
+                        <div class=top>
+                            <div class=name>
+                                <span class=display></span>
+                                <span class=user></span>
+                            </div>
+                            <span class=sep>.</span>
+                            <span class=passed></span>
+                            <div class="icon options"></div>
+                        </div>
+                        <div class=replying>
+                            <span class=tag></span>
+                            <span>Replying to&nbsp;</span>
+                        </div>
+                        <span class=text></span>
+                        <div class=bot>
+                            <div class=button>
+                                <div class="icon reply"></div>
+                                <span class="value replies"></span>
+                            </div>
+                            <div class=button>
+                                <div class="icon retweet"></div>
+                                <span class="value requotes"></span>
+                            </div>
+                            <div class=button>
+                                <div class="icon like"></div>
+                                <span class="value likes"></span>
+                            </div>
+                            <div class=button>
+                                <div class="icon share"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="thread up"></div>
+                <div class="thread down"></div>
+            </div>
+            
+            <div id=thread class="tweet thread">
+                <div class=body>
+                    <div class=content>
+                        <div class=top>
+                            <img class=avatar></img>
+                            <div class=name>
+                                <span class=display></span>
+                                <span class=user></span>
+                            </div>
+                            <div class="icon options"></div>
+                        </div>
+                        <div class=replying>
+                            <span class=tag></span>
+                            <span>Replying to&nbsp;</span>
+                        </div>
+                        <span class=text></span>
+                        <div class=info>
+                            <span class=time></span>
+                            <span class=sep>.</span>
+                            <span class=date></span>
+                        </div>
+                        <div class=stats>
+                            <div class=stat>
+                                <span class="value retweets"></span>
+                                <span class=retweet>Retweets</span>
+                                <div class=border></div>
+                            </div>
+                            <div class=stat>
+                                <span class="value quotes"></span>
+                                <span class=quote>Quote Tweets</span>
+                                <div class=border></div>
+                            </div>
+                            <div class=stat>
+                                <span class="value likes"></span>
+                                <span class=like>Likes</span>
+                                <div class=border></div>
+                            </div>
+                        </div>
+                        <div class=bot>
+                            <div class="button icon reply"></div>
+                            <div class="button icon retweet"></div>
+                            <div class="button icon like"></div>
+                            <div class="button icon share"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="thread up"></div>
+            </div>
+
+            <div id=more-thread class="more thread">
+                <img class=avatar></img>
+                <span>Show this thread</span>
+            </div>
+
+            <div id=more-replies class="more replies">
+                <div class="icon more"></div>
+                <span>Show replies</span>
+            </div>
+
+            <div id=chain class=chain></div>
+
+        </div>
+
+        <div id=screen></div>
+    </body>
+</html>

@@ -1,0 +1,354 @@
+.tweet {
+    padding: var(--padding-top) var(--padding-right) 0 var(--padding-left);
+    position: relative;
+}
+
+.tweet .click {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.tweet > :not(.body), .tweet > .body > :not(.click) {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tweet :is(.avatar, .button, .icon) {
+    pointer-events: initial !important;
+}
+
+.tweet .body {
+    display: flex;
+}
+
+.tweet .content {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 1;
+}
+
+.tweet .body .avatar {
+    --size: var(--avatar-size);
+    margin-right: var(--avatar-right);
+}
+
+.more.thread, .more.thread ~ .thread {
+    --more-size: var(--more-thread-size);
+    --more-bot: var(--more-thread-bot);
+}
+
+.more.replies {
+    --more-size: var(--more-replies-size);
+    --more-bot: var(--more-replies-bot);
+}
+
+.more.replies ~ .thread {
+    --more-size: var(--more-replies-size);
+    --more-bot: calc(var(--more-replies-bot) + var(--more-replies-top));
+}
+
+.tweet > .more {
+    position: relative;
+    margin-bottom: var(--more-bot);
+    align-items: center;
+    display: flex;
+}
+
+.tweet > .more.replies {
+    margin-top: var(--more-replies-top);
+}
+
+.tweet > .more span {
+    flex-shrink: 1;
+}
+
+.tweet > .more :is(.avatar, .icon) {
+    --size: var(--more-size);
+    --pad: calc((var(--avatar-size) - var(--more-size)) / 2);
+    margin-right: calc(var(--pad) + var(--avatar-right));
+    margin-left: var(--pad);
+}
+
+.tweet > .more .icon {
+    width: var(--size);
+    height: var(--size);
+}
+
+.tweet .thread:is(.up, .down) {
+    --bot: calc(var(--more-bot) + var(--more-size) + var(--space));
+    --top: calc(var(--padding-top) + var(--avatar-size) + var(--space));
+    --left: calc(var(--padding-left) + (var(--avatar-size) - var(--width)) / 2);
+    width: var(--width);
+    left: var(--left);
+    position: absolute;
+    background-color: var(--color);
+}
+
+.tweet .thread.up {
+    top: 0;
+    border-radius: 100vw;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.tweet .thread.down {
+    bottom: 0;
+    border-radius: 100vw;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.tweet:not(:first-child) .thread.up {
+    height: calc(var(--padding-top) - var(--space));
+}
+
+.tweet:not(:last-child) .thread.down {
+    height: calc(100% - var(--padding-top) - var(--avatar-size) - var(--space));
+}
+
+.tweet > .more ~ .thread.up {
+    top: unset;
+    bottom: var(--bot);
+    height: var(--width);
+}
+
+.tweet > .more ~ .thread.down {
+    bottom: unset;
+    top: var(--top);
+    height: calc(100% - var(--bot) - var(--top) - var(--width));
+}
+
+.chain {
+    border-bottom: 1px solid var(--border);
+}
+
+
+
+/**/
+
+
+
+.tweet.reply .top .name {
+    display: flex;
+    flex-shrink: 1;
+}
+
+.tweet.reply .top .name span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tweet.reply .top .display {
+    margin-right: var(--margin);
+    max-width: 100%;
+}
+
+.tweet.reply .top .user {
+    flex-shrink: 1;
+}
+
+.tweet.reply .top .sep {
+    margin: 0 var(--margin);
+    line-height: var(--height);
+}
+
+.tweet.reply .top .passed {
+    margin-right: var(--margin);
+}
+
+.tweet.reply .top .options {
+    width: var(--size);
+    margin-left: auto;
+}
+
+.tweet.reply .top {
+    display: flex;
+    margin-bottom: var(--margin);
+}
+
+.tweet.reply .replying .tag {
+    margin-bottom: var(--margin);
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.tweet.reply .replying :is(.tag:empty, .tag:empty + span) {
+    display: none;
+}
+
+.tweet.reply .replying {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+    display: flex;
+    width: 100%;
+}
+
+.tweet.reply .text {
+    width: 100%;
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    padding-top: var(--margin-top);
+    padding-bottom: var(--margin-bot);
+    min-height: var(--line-height);
+    box-sizing: content-box;
+}
+
+.tweet.reply .bot .button {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 1;
+    min-width: min-content;
+    align-items: center;
+    display: flex;
+}
+
+.tweet.reply .bot .icon {
+    height: 100%;
+    width: var(--size);
+    margin: 0 var(--margin);
+}
+
+.tweet.reply .bot :first-child .icon {
+    margin-left: 0;
+}
+
+.tweet.reply .bot {
+    height: var(--height);
+    display: flex;
+}
+
+
+
+/**/
+
+
+
+.tweet.thread .top .name {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    margin-right: var(--avatar-right);
+}
+
+.tweet.thread .top .name span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.tweet.thread .top .display {
+    margin-bottom: var(--margin);
+}
+
+.tweet.thread .top .options {
+    width: var(--size);
+    height: var(--size);
+    margin-top: var(--margin);
+    align-self: flex-start;
+    margin-left: auto;
+}
+
+.tweet.thread .top {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--margin);
+}
+
+.tweet.thread .replying .tag {
+    margin-bottom: var(--margin);
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.tweet.thread .replying :is(.tag:empty, .tag:empty + span) {
+    display: none;
+}
+
+.tweet.thread .replying {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+    display: flex;
+    width: 100%;
+}
+
+.tweet.thread .text {
+    width: 100%;
+    height: auto;
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    padding-top: var(--margin-top);
+    padding-bottom: var(--margin-bot);
+    min-height: var(--line-height);
+    box-sizing: content-box;
+}
+
+.tweet.thread .info span {
+    max-width: 100%;
+}
+
+.tweet.thread .info .sep {
+    margin: 0 var(--margin);
+    line-height: var(--height);
+}
+
+.tweet.thread .info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: var(--margin);
+}
+
+.tweet.thread .stats {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+}
+
+.tweet.thread .stat {
+    position: relative;
+    overflow: visible;
+}
+
+.tweet.thread .stat .border {
+    width: 100vw;
+    border-top: 1px solid var(--border);
+    position: absolute;
+    top: 0;
+}
+
+.tweet.thread .stat span {
+    line-height: calc(var(--height) + 1px);
+}
+
+.tweet.thread .stat .value + span {
+    margin-right: var(--margin);
+}
+
+.tweet.thread .stat :is(.value:empty, .value:empty + span) {
+    display: none;
+}
+
+.tweet.thread .bot .button {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 1;
+    min-width: min-content;
+    align-items: center;
+    display: flex;
+}
+
+.tweet.thread .bot {
+    height: var(--height);
+    display: flex;
+}
+
+html.android .tweet.thread .bot {
+    margin-right: calc(-1 * var(--padding-right));
+    margin-left: calc(-1 * var(--padding-left));
+}

@@ -1,0 +1,52 @@
+{
+
+    "unknown": {
+        "avatar": "/assets/avis/unknown.jpg",
+        "display": "unknown",
+        "user": "null",
+        "tweets": [
+            {
+                "avatar": "/assets/avis/error.jpg",
+                "display": "offline",
+                "user": "server",
+
+                "more": true,
+                "text": "",
+                "replies": [
+
+                ]
+            }
+        ]
+    },
+
+    "limit": {
+        "avatar": "/assets/avis/error.jpg",
+        "display": "rate limited",
+        "user": "server",
+
+        "more": true,
+        "text": "",
+        "replies": [
+
+        ]
+    },
+
+    "error": {
+        "avatar": "/assets/avis/error.jpg",
+        "display": "something went wrong",
+        "user": "server",
+
+        "more": true,
+        "text": "",
+        "replies": [
+
+        ]
+    },
+
+    "tweets": [
+        {
+            "text": ""
+        }
+    ]
+
+}
