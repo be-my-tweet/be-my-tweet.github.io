@@ -19,10 +19,10 @@
                         "display": "offline",
                         "user": "server",
 
-                        "text": "you can come back later and it should be back up, then you can post your tweet :)",
+                        "text": "you can come back in a little bit and it should be working again, then you can post your tweet :)",
                         "replies": [
                             {
-                                "text": "im hosting this myself so i cant guarantee 24/7 uptime, but if i were to guess itll be more like 23/6 uptime, which is still pretty good!"
+                                "text": "im hosting this myself so i cant really guarantee 24/7 uptime, but if i were to guess itll be more like 23/6 uptime, which is still pretty good!"
                             },
                             {
                                 "chain": 1,
@@ -47,7 +47,7 @@
 
         "chain": 1,
         "more": true,
-        "text": "youre being rate limited :( the previous tweet has only just been posted and it wouldnt be fair to get rid of it so fast, they all deserve a chance to shine!",
+        "text": "youve been rate limited :( the previous tweet has only just been posted and it wouldnt be fair to get rid of it so fast, they all deserve a chance to shine!",
         "replies": [
             {
                 "avatar": "/assets/avis/error.jpg",
@@ -58,15 +58,15 @@
                 "replies": [
                     {
                         "chain": 1,
-                        "text": "a new tweet can be posted every 5 minutes, i think thats fair im not really sure so ill better be safe than sorry",
+                        "text": "a new tweet can be posted every 3 minutes, i think thats fair im not really sure so ill just better be safe than sorry",
                         "replies": [
                             {
-                                "text": "if its too long i can get it down to about a minute before running into the twitter api rate limits so theres plenty of room still"
+                                "text": "if its too long i can get it down to about a minute before running into the twitter api rate limits so theres some room still"
                             }
                         ]
                     },
                     {
-                        "text": "oh and sorry you have to type it all again i hope it wasnt too long of a tweet, but on the other hand, what are you doing posting long tweets here anyways?"
+                        "text": "oh and sorry you have to type it all again i hope it wasnt too long of a tweet, but on the other hand, what are you doing posting long tweets on here anyways?"
                     }
                 ]
             }
@@ -151,7 +151,7 @@
                     ]
                 },
                 {
-                    "text": "and the 140 something followers who probably dont even know who i am (and will likely start unfollowing once i pop up in their timeline)",
+                    "text": "and the 140 something followers who probably dont even know who i am (and will likely start unfollowing once i start to pop up on their timeline)",
                     "replies": [
                         {
                             "text": "why and how do i even have this many followers anyways its insane its just way too many"
@@ -164,11 +164,11 @@
             ]
         },
         {
-            "text": "you can change some display settings using the header at the top, the bird cycles between accent colors and the stars cycle between light and dark themes, the avatar switches between android and ios",
+            "text": "you can change display settings using the header at the top, the bird cycles between accent colors and the stars cycle between light and dark themes, the avatar switches between android and ios",
             "replies": [
                 {
                     "chain": 1,
-                    "text": "i tried to stay as close as possible to the app versions as i could but most of it is just an approximation and i didnt implement all aspects from the apps because im literally just using html/css/js cut me a little bit of slack please",
+                    "text": "i tried to stay as close to the app versions as i could but most of it is just an approximation and i didnt implement all aspects because im literally just using html/css/js cut me a little bit of slack please",
                     "replies": [
                         {
                             "text": "ive already got the twitter for web app completely beat so if we use that as a baseline i think i did pretty well"
@@ -190,7 +190,7 @@
                             "text": "ios stuff i didnt implement",
                             "replies": [
                                 {
-                                    "text": "same as for android i didnt implement the header sliding away"
+                                    "text": "same as for android i didnt implement the header sliding away, although ios just does it in like, a way worse way? its terribly inconsistent for some reason i have no clue whats going on with that"
                                 },
                                 {
                                     "text": "that ugly ass tiny spinner, why is it so small? and why does it look so old? i could make it but itd be an offense to the android spinner to replace it with that thing and i cant bring myself to do that"
@@ -212,7 +212,7 @@
                             "replies": [
                                 {
                                     "chain": 1,
-                                    "text": "any ui elements that will never really show up, which is quite a lot, but i did do a lot of the main ones so its fair i think",
+                                    "text": "any ui elements that will never really show up, which is quite a lot, but i did do most of the main ones so its fair i think",
                                     "replies": [
                                         {
                                             "text": "the most important things im missing would be attachments, quote tweets, little messages such as pinned or retweeted by and embedded links, mentions, emojis, ..."
@@ -229,7 +229,7 @@
                                     "text": "the web version for pc, that would be a straight nightmare its so horribly inconsistent with the apps"
                                 },
                                 {
-                                    "text": "almost all features that wouldnt serve an actual purpose, because there still is a limit to both my free time and devotion to a project this stupid"
+                                    "text": "almost all features that wouldnt serve an actual purpose, because theres still a limit to both my free time and devotion to a project this stupid"
                                 }
                             ]
                         }
@@ -242,7 +242,7 @@
             "text": "frequently asked questions!",
             "replies": [
                 {
-                    "text": "i dont actually have any questions because i havent even released this yet, so ill just put questions i think make sense below"
+                    "text": "i havent actually gotten any questions because this hasnt even been released yet, so ill just put questions i think make sense below"
                 },
                 {
                     "avatar": "/assets/avis/question.jpg",
@@ -253,7 +253,7 @@
                     "replied": 1,
                     "retweets": 3,
                     "likes": 107,
-                    "text": "why would anybody want something like this?"
+                    "text": "this is fucking stupid why would anybody use this"
                 }
             ]
         }

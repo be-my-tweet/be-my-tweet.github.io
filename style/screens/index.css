@@ -205,7 +205,7 @@ html.ios #screen > .screen > .body > .float {
 
 
 #screen > .screen.compose > .body > .content > .avatar {
-    --size: 36px;
+    --size: 40px;
     --margin-top: 12px;
     --margin-left: 12px;
     --margin-right: 10px;
@@ -219,7 +219,7 @@ html.ios #screen > .screen > .body > .float {
 }
 
 html.ios #screen > .screen.compose > .body > .content > .avatar {
-    --size: 32px;
+    --size: 36px;
     --margin-top: 4px;
     --margin-right: 8px;
     --margin-left: 16px;
