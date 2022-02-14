@@ -54,7 +54,6 @@ window.addEventListener('load', () => {
         let [query, id] = [params.query(), params.id()];
         let [thread, replies] = find(base, id) || [[], tweets];
         if (id && !thread.length) return replace(query, false);
-        Object.keys(msg).forEach(q => msg[q].time = query.includes(q) ? msg[q].time || now() : undefined);
         if (!thread.length) replies = query.map(q => msg[q]).filter(m => m).concat(replies);
         fill.tweets(screen, tweet, user, thread, replies);
         screen.ontransitionend?.();
