@@ -1,3 +1,9 @@
+alert('hi!');
+window.onerror = function (msg, url, line) {
+    alert(msg + '\n' + url + '\n' + line);
+    return true;
+}
+
 import { params, replace } from './link.js';
 import { now } from './util.js'
 import http from './http.js';
