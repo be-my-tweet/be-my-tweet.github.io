@@ -13,7 +13,6 @@ const request = (method, body) => new Promise((resolve, reject) => {
     }
     let [timeout, timedout] = [5000, false];
     xmlhttp.open(method, 'https://178.116.73.195:443/twt', true);
-    xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
     setTimeout(() => timedout || (timedout = true, reject()), timeout);
     if (!body) xmlhttp.send();
     else xmlhttp.send(body);
