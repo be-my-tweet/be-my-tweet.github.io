@@ -5,7 +5,8 @@ const request = (method, body) => new Promise((resolve, reject) => {
         if (xmlhttp.status !== 200) return reject();
         try {
             let text = xmlhttp.responseText;
-            resolve(JSON.parse(text));
+            if (text) resolve(JSON.parse(text));
+            else resolve(undefined);
             timedout = true;
         } catch (err) {
             reject(err);

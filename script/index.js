@@ -12,6 +12,7 @@ const get = r => {
         },
         (resolve, reject) => {
             http.get().then(res => {
+                if (!res) return reject();
                 let keys = ['user', 'display', 'avatar', 'time', 'tweets'];
                 if (keys.some(key => !res[key])) return reject();
                 resolve(res);
