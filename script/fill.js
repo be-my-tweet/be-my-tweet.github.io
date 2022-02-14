@@ -77,11 +77,11 @@ const screen = (templates, template) => {
     const using = (q, cb) => (el => el && cb(el))(find(q));
     const find = (el, q) => q ? el.querySelector(q) : screen.querySelector(el);
     const click = (q, cb) => (typeof q === 'string' ? find(q) : q)?.addEventListener('click', cb);
-    click('.screen.thread .footer .home', () => replace(params.query(), false));
     click('.screen.home .twitter', () => params.cycle(params.accents));
     click('.screen.home .avatar', () => params.cycle(params.systems));
     click('.screen.home .latest', () => params.cycle(params.themes));
     click('.screen.home .float', () => (replace(), push('compose')));
+    click('button.home', () => replace(params.query(), false));
     ['.back', '.close', '.cancel'].map(el => click(el, pop));
 
     let classes = ['static'];
