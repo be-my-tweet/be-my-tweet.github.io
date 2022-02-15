@@ -1,11 +1,12 @@
 const max = 280;
-const zwsp = '\xa0';
-const link = /(?<=[A-Za-z])\.(?=[A-Za-z]{2,})/g;
-const mention = /(?<![A-Za-z0-9_\%\#\$\&\*\!])\@(?=[A-Za-z0-9_]+(?![@A-Za-z0-9_]))/g;
+const link = /[A-Za-z]\.(?=[A-Za-z]{2,})/g;
+const mention = /[^A-Za-z0-9_\%\#\$\&\*\!]\@(?=[A-Za-z0-9_]+(?![@A-Za-z0-9_]))/g;
 
 const parsing = {
-    links: tweet => tweet.replace(link, '.' + zwsp),
-    mentions: tweet => tweet.replace(mention, '@' + zwsp)
+    pad: tweet => ' ' + tweet + ' ',
+    links: tweet => tweet.replace(link, ' . '),
+    mentions: tweet => tweet.replace(mention, ' @ '),
+    trim: tweet => tweet.slice(1, -1)
 }
 
 const safe = input => Object.values(parsing).reduce((acc, cur) => cur(acc), input);
