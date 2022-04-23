@@ -10,32 +10,7 @@
                 "display": "offline",
                 "user": "server",
 
-                "chain": 1,
-                "more": true,
-                "text": "looks like the server is offline! dont worry, this is pretty normal i think",
-                "replies": [
-                    {
-                        "avatar": "/assets/avis/error.jpg",
-                        "display": "offline",
-                        "user": "server",
-
-                        "text": "you can come back in a little bit and it should be working again, then you can post your tweet :)",
-                        "replies": [
-                            {
-                                "text": "im hosting this myself so i cant really guarantee 24/7 uptime, but if i were to guess itll be more like 23/6 uptime, which is still pretty good!"
-                            },
-                            {
-                                "chain": 1,
-                                "text": "theres a few scenarios where ill have to intervene manually (SSL expired, IP changed, my code bad, ...) but usually it should come back online pretty quick",
-                                "replies": [
-                                    {
-                                        "text": "if its taking too long, dont hesitate to send me a message and ill fix it right away!"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
+                "text": "i took the server offline for a little bit, it should be back in a day or 2, try to come back tomorrow!"
             }
         ]
     },
