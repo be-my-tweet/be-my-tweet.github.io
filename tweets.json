@@ -10,7 +10,17 @@
                 "display": "offline",
                 "user": "server",
 
-                "text": "i took the server offline for a little bit, it should be back in a day or 2, try to come back tomorrow!"
+                "chain": 1,
+                "text": "i took the server offline for a little bit, it should be back in a day or 2, try to come back tomorrow!",
+                "replies": [
+                    {
+                        "avatar": "/assets/avis/error.jpg",
+                        "display": "offline",
+                        "user": "server",
+
+                        "text": "i kept forgetting this and then ran into some issues and i cant be bothered to fix things now so itll be like another week or so, my apologies"
+                    }
+                ]
             }
         ]
     },
